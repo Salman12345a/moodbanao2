@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Expo APK",
+        "type": "reactnative",
+        "request": "attach",
+        "target": "localhost:8081", // Change this if needed
+        "port": 8081 // Make sure it matches the port in your "react-native start" command
+      }
+    ]
+  }
+  

@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Gradle Build with Stacktrace",
+        "type": "shell",
+        "command": "./gradlew",  // Replace with your actual command
+        "args": ["--stacktrace"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  
