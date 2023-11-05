@@ -64,7 +64,7 @@ const RegistrationScreen = ({ navigation }) => {
     }
 
     if (Object.keys(validationErrors).length > 0) {
-      // If there are validation errors, display them and do not proceed with registration
+      // If there are validation errors, diy them and do not proceed with registration
       setErrors(validationErrors);
       return;
     }

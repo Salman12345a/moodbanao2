@@ -6,12 +6,12 @@ const WelcomeScreen = () => {
   return (
     <View style={styles.container}>
       <WebView
-        source={{ uri: 'https://www.google.com' }} // Replace with your desired website URL
+        source={{ uri: 'https://www.moodbanao.com' }} // Replace with your desired website URL
         style={styles.webview}
       />
     </View>
   );
-};
+}; 
 
 const styles = StyleSheet.create({
   container: {

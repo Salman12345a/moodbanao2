@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import Spinner from 'react-native-loading-spinner-overlay';
+import { View, Text, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function LoadingScreen() {
   const [loading, setLoading] = React.useState(true);
@@ -14,13 +14,22 @@ function LoadingScreen() {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: "#10C428" }}>
-      <Spinner
-        visible={loading}
-        textContent={'Loading...'}
-        textStyle={{ color: 'white' }}
-      />
-      {/* Customize your loading screen here */}
-      
+      <View style={{ alignItems: 'center' }}>
+        <Image
+          source={require('../image/img2.png')}
+          style={{ width: 105, height: 105, tintColor: 'white' }}
+        />
+        {loading ? (
+          // Add some spacing between the image and the text
+          <View style={{ marginTop: 2 }}>
+          <Text style={{ color: 'white', fontSize: 18 }}>moodbanao</Text>
+        </View>
+        
+        ) : (
+          // Customize your loading screen here
+          <Text style={{ color: 'white' }}>Loading complete</Text>
+        )}
+      </View>
     </View>
   );
 }
