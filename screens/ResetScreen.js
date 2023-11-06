@@ -50,7 +50,17 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    color:'white'
+    color: 'white',
+    fontWeight: 'bold',
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+    textAlign: 'center',
+    lineHeight: 24,
+    padding: 10,
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    borderRadius: 10,
+    margin: 10,
   },
 
   button: {
@@ -65,12 +75,21 @@ const styles = StyleSheet.create({
     opacity: 0.7,
   },
   buttonText: {
+    fontSize: 20,
+    color: 'white',
+    fontWeight: 'bold',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
     textAlign: 'center',
-    color: "white",
+    backgroundColor: 'transparent',
+    padding: 10,
+    borderRadius: 10,
   },
+
   helpicon:{
-    height:210,
-    width:250
+    height:105,
+    width:125
   }
 });
 

@@ -32,7 +32,7 @@ const RegistrationScreen = ({ navigation }) => {
         if (!value) return 'Please input password';
         if (value.length < 5) return 'Minimum password length is 5';
         if (!/[a-zA-Z]/.test(value)) return 'Password must contain at least one letter';
-        if (!/[!@#$%^&*?.,]$/.test(value)) return 'Special character are allowed !@#$%^&*?.,';
+        if (!/[!@#$%^&*?.,]$/.test(value)) return 'Special character are Atlast !@#$%^&*?.,';
         
         break;
       case 'confirmPassword':
