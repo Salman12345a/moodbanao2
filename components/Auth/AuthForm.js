@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   },
 
   form:{
-    color:"black"
+    color: "black",
   },
 
   container1: {

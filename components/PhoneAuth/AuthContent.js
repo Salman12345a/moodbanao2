@@ -4,61 +4,51 @@ import {
   StyleSheet,
   View,
   ImageBackground,
-  SafeAreaView,
   ScrollView,
-  Text,
-  Image,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import FlatButton from "../ui/FlatButton";
-import AuthForm from "./AuthForm";
+import PhoneAuthForm from "./PhoneAuthForm"; // Assume you create a PhoneAuthForm component
 import { Colors } from "../../constants/styles";
 
 function AuthContent({ isLogin, onAuthenticate }) {
   const navigation = useNavigation();
 
   const [credentialsInvalid, setCredentialsInvalid] = useState({
-    email: false,
-    password: false,
-    confirmEmail: false,
-    confirmPassword: false,
+    phoneNumber: false,
+    confirmationCode: false,
   });
 
   function switchAuthModeHandler() {
     if (isLogin) {
-      navigation.replace("Signup");
+      navigation.replace("PhoneSignup"); // Adjust navigation name accordingly
     } else {
-      navigation.replace("Login");
+      navigation.replace("PhoneLogin"); // Adjust navigation name accordingly
     }
   }
 
   function submitHandler(credentials) {
-    let { email, confirmEmail, password, confirmPassword } = credentials;
+    let { phoneNumber, confirmationCode } = credentials;
 
-    email = email.trim();
-    password = password.trim();
+    phoneNumber = phoneNumber.trim();
+    confirmationCode = confirmationCode.trim();
 
-    const emailIsValid = email.includes("@");
-    const passwordIsValid = password.length > 6;
-    const emailsAreEqual = email === confirmEmail;
-    const passwordsAreEqual = password === confirmPassword;
+    // Implement your validation logic for phone number and confirmation code
 
-    if (
-      !emailIsValid ||
-      !passwordIsValid ||
-      (!isLogin && (!emailsAreEqual || !passwordsAreEqual))
-    ) {
+    const phoneNumberIsValid = phoneNumber;
+    const confirmationCodeIsValid = confirmationCode.length === 6;
+
+    if (!phoneNumberIsValid || !confirmationCodeIsValid) {
       Alert.alert("Invalid input", "Please check your entered credentials.");
       setCredentialsInvalid({
-        email: !emailIsValid,
-        confirmEmail: !emailIsValid || !emailsAreEqual,
-        password: !passwordIsValid,
-        confirmPassword: !passwordIsValid || !passwordsAreEqual,
+        phoneNumber: !phoneNumberIsValid,
+        confirmationCode: !confirmationCodeIsValid,
       });
       return;
     }
-    onAuthenticate({ email, password });
+
+    onAuthenticate({ phoneNumber, confirmationCode });
   }
 
   return (
@@ -68,14 +58,14 @@ function AuthContent({ isLogin, onAuthenticate }) {
         style={styles.backgroundImage}
       >
         <View style={styles.authContent}>
-          <AuthForm
+          <PhoneAuthForm
             isLogin={isLogin}
             onSubmit={submitHandler}
             credentialsInvalid={credentialsInvalid}
           />
           <View style={styles.buttons}>
             <FlatButton onPress={switchAuthModeHandler}>
-              {isLogin ? "Create a new user" : "Log in instead"}
+              {isLogin ? "Switch to Phone Signup" : "Switch to Phone Login"}
             </FlatButton>
           </View>
         </View>
@@ -95,13 +85,6 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
 
-  b1: {
-    height: 20,
-    width: 20,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
   container1: {
     justifyContent: "center",
     padding: -1,
@@ -111,15 +94,7 @@ const styles = StyleSheet.create({
     marginTop: -19,
   },
 
-  backmain: {
-    backgroundColor: "white",
-  },
-
   buttons: {
     marginTop: 8,
-  },
-
-  container: {
-    flex: 1,
   },
 });

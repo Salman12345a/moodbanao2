@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "847722161738",
+    "firebase_url": "https://moodbanao-default-rtdb.firebaseio.com",
+    "project_id": "moodbanao",
+    "storage_bucket": "moodbanao.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847722161738:android:d45a904655e0acc48628b3",
+        "android_client_info": {
+          "package_name": "com.salman123342.moodbanao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847722161738-h9vrcsr0g8so75l1utmhqovum60n3tpv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.salman123342.moodbanao",
+            "certificate_hash": "31a8f0488f8ba78281daab33aafa00845b99fcae"
+          }
+        },
+        {
+          "client_id": "847722161738-k3cr3hj7uas53npfcbnlsjqoe1k9pvnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9VDydaLrfU2OrThzs7mWSHJxmebmj7h0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847722161738-k3cr3hj7uas53npfcbnlsjqoe1k9pvnj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
